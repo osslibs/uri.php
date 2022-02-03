@@ -17,7 +17,7 @@ class MutableURIObjectTest extends TestCase
         $fragment = "fragment";
 
         $factory = new MutableURIObjectFactory();
-        $uri = $factory->makeURI($scheme, $userInfo, $host, $port, $path, $query, $fragment);
+        $uri = $factory->makeMutableURI($scheme, $userInfo, $host, $port, $path, $query, $fragment);
 
         $this->assertSame($scheme, $uri->getScheme());
         $this->assertSame($userInfo, $uri->getUserInfo());

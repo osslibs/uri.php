@@ -28,6 +28,7 @@ const PATTERN_URI_FRAGMENT = '(((([-A-Z._a-z0-9]|~)|%[0-9A-Fa-f][0-9A-Fa-f]|(\!|
  * @param URI|string $uri
  * @param URIFactory|null $factory
  * @return URI
+ * @throws InvalidURIException
  */
 function uri($uri, URIFactory $factory = null): URI
 {
@@ -44,6 +45,29 @@ function uri($uri, URIFactory $factory = null): URI
     }
 
     return uri_parse((string)$uri);
+}
+
+/**
+ * Makes a MutableURI.
+ *
+ * @param URI|string $uri
+ * @param MutableURIFactory|null $factory
+ * @return MutableURI
+ * @throws InvalidURIException
+ */
+function mutable_uri($uri, MutableURIFactory $factory = null): MutableURI
+{
+    $uri = $uri instanceof URI ? $uri : uri_parse((string)$uri);
+
+    return ($factory ?? new MutableURIObjectFactory())->makeMutableURI(
+        $uri->getScheme(),
+        $uri->getUserInfo(),
+        $uri->getHost(),
+        $uri->getPort(),
+        $uri->getPath(),
+        $uri->getQuery(),
+        $uri->getFragment()
+    );
 }
 
 /**

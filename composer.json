@@ -1,6 +1,7 @@
 {
   "name": "osslibs/uri",
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "Terrence Howard",
