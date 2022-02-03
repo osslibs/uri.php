@@ -14,7 +14,9 @@
     php composer.phar require osslibs/uri
 
 ## Examples
-
+    > use function osslibs\URI\uri as uri;
+    > use function osslibs\URI\mutable_uri as mutable_uri;
+    >
     > $uri = uri("scheme://user@host:port/path?query#fragment")
     > echo $uri->getScheme();
     "scheme"
