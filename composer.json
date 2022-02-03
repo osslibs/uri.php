@@ -1,16 +1,22 @@
 {
     "name": "osslibs/uri",
-    "autoload": {
-        "psr-4": {
-            "osslibs\\URI\\": "src/"
-        }
-    },
+    "type": "library",
     "authors": [
         {
             "name": "Terrence Howard",
-            "email": "chemisus+oss+libs@gmail.com"
+            "email": "chemisus+osslibs+uri@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "osslibs\\URI\\": "src"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "require": {},
     "require-dev": {
         "phpunit/phpunit": "^5.5"
     }
