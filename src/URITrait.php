@@ -95,8 +95,8 @@ trait URITrait
         return $this->fragment;
     }
 
-    public function merge(URI $uri): URI
+    public function merge($uri): URI
     {
-        return uri_merge($this, $uri);
+        return uri_merge($this, uri($uri));
     }
 }

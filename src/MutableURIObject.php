@@ -15,7 +15,7 @@ class MutableURIObject implements MutableURI
 
     public function setAuthority(?string $authority)
     {
-        $this->authority = $authority;
+        throw new Exception("Not yet implemented");
     }
 
     public function setUserInfo(?string $userInfo)
@@ -46,10 +46,5 @@ class MutableURIObject implements MutableURI
     public function setFragment(?string $fragment)
     {
         $this->fragment = $fragment;
-    }
-
-    public function merge($child): URI
-    {
-        return uri_merge($this, uri($child));
     }
 }
