@@ -19,4 +19,6 @@ interface URI
     public function getQuery(): ?string;
 
     public function getFragment(): ?string;
+
+    public function merge(URI $uri): URI;
 }
