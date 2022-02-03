@@ -27,4 +27,22 @@ class URIObjectTest extends TestCase
         $this->assertSame($query, $uri->getQuery());
         $this->assertSame($fragment, $uri->getFragment());
     }
+
+    public function testMergeAbsolute()
+    {
+        $uri = uri("http://a/b/c/d")->merge("/x/y/z");
+        $this->assertSame("http://a/x/y/z", (string)$uri);
+    }
+
+    public function testMergeRelativeFile()
+    {
+        $uri = uri("http://a/b/c/d")->merge("x/y/z");
+        $this->assertSame("http://a/b/c/x/y/z", (string)$uri);
+    }
+
+    public function testMergeRelativeDir()
+    {
+        $uri = uri("http://a/b/c/d/")->merge("x/y/z");
+        $this->assertSame("http://a/b/c/d/x/y/z", (string)$uri);
+    }
 }
