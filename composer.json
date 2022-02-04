@@ -1,23 +1,29 @@
 {
     "name": "osslibs/uri",
     "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Terrence Howard",
-            "email": "chemisus+osslibs+uri@gmail.com"
+            "email": "chemisus@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "mockery/mockery": "^1.3"
+    },
     "autoload": {
         "psr-4": {
-            "osslibs\\URI\\": "src"
+            "osslibs\\URI\\": "src/"
         },
         "files": [
             "src/functions.php"
         ]
     },
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^5.5"
+    "autoload-dev": {
+        "psr-4": {
+            "osslibs\\URI\\": "tests/"
+        }
     }
 }
